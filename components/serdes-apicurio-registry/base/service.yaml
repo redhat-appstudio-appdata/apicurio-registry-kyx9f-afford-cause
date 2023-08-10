@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: serdes-apicurio-registry
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: serdes-apicurio-registry
+    app.kubernetes.io/part-of: apicurio-registry
+  name: serdes-apicurio-registry
+spec:
+  ports:
+  - port: 8081
+    targetPort: 8081
+  selector:
+    app.kubernetes.io/instance: serdes-apicurio-registry
+status:
+  loadBalancer: {}
